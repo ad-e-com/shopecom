@@ -6,7 +6,7 @@ export function initializeKeycloak(keycloak: KeycloakService) : () => Promise<Bo
         config: {
           realm: 'master',
           url: 'http://shopecom-service',
-          clientId: 'ng-key'
+          clientId: 'shopecom-client'
         },
         initOptions: {
           onLoad: 'check-sso',

@@ -1,3 +1,16 @@
+# To build image first create dist using ng build
+```
+
+docker run --rm \
+-v ./:/app -w /app \
+assaduzzaman/ng-build:node18ngcli16 \
+npm install && ng version && ng build --aot --output-hashing=all
+```
+# Now build deployment image
+```
+docker build -t shopecom-ui -f min.Dockerfile .
+```
+
 # run with host and port
 ```
 ng serve --host shopecom.com --port 80

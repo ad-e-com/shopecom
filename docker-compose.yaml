@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   shopecom-service:
-    image: shopecom-ui
+    image: assaduzzaman/shopecom-ui
     container_name: shopecom-ui
     depends_on:
       - keycloak
@@ -9,13 +9,13 @@ services:
     ports:
       - 80:80
   shopecom-api:
-    image: shopecom-api
+    image: assaduzzaman/shopecom-api
     container_name: shopecom-api
     depends_on:
       - keycloak
       - mysqldb
-    ports:
-      - 8000:8000  
+    expose:
+      - 8000  
   keycloak:
     image: quay.io/keycloak/keycloak:21.1.1
     container_name: keycloak
@@ -26,8 +26,8 @@ services:
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
-    ports:
-      - 8080:8080
+    expose:
+      - 8080
 
   mysqldb:
     image: mysql:5.7
