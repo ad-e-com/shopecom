@@ -19,7 +19,7 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:21.1.1
     container_name: keycloak
-    # command: start-dev --import-realm
+    # command: start-dev --import 
     command: start-dev
     volumes:
       - ./keycloak:/opt/keycloak/data/import
@@ -31,7 +31,7 @@ services:
 
   mysqldb:
     image: mysql:5.7
-    container_name: mysql
+    container_name: mysqldb
     volumes:
       - ./mysql-data:/var/lib/mysql
       - ./keycloak:/opt/keycloak/data/import

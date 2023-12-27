@@ -10,5 +10,5 @@ RUN ng build --aot --output-hashing=all
 
 ### STAGE 2: Run ###
 FROM nginx:1.23.3
-COPY ./nginx.config.tm /etc/nginx/nginx.conf
+COPY ./nginx.config /etc/nginx/nginx.conf
 COPY --from=build /angular-ecommerce/dist/angular-ecommerce /usr/share/nginx/html

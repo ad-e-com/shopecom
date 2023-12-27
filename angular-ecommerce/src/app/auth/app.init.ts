@@ -4,8 +4,8 @@ export function initializeKeycloak(keycloak: KeycloakService) : () => Promise<Bo
     return () =>
       keycloak.init({
         config: {
-          realm: 'osspid',
-          url: 'https://idpv2.oss.net.bd',
+          realm: 'master',
+          url: 'http://shopecom-service',
           clientId: 'ng-key'
         },
         initOptions: {

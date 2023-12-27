@@ -1,4 +1,10 @@
 ```angular2html
+
+mvn clean package -B \
+-Dmaven.test.skip=true \
+-Dactive.profile=docker
+
+docker build -t shopecom:backend .
 docker run --detach --name=mysql_5_7 --restart=always --volume=/Volumes/vm/dockerdata/mysql-data:/var/lib/mysql -p 3306:3306  --env="MYSQL_ROOT_PASSWORD=123456" mysql:5.7
 
 
