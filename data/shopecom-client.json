@@ -1,5 +1,5 @@
 {
-  "clientId": "ng-key",
+  "clientId": "shopecom-client",
   "name": "",
   "description": "",
   "rootUrl": "",
@@ -37,8 +37,8 @@
   "defaultClientScopes": [
     "web-origins",
     "acr",
-    "profile",
     "roles",
+    "profile",
     "email"
   ],
   "optionalClientScopes": [

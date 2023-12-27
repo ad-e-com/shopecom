@@ -12,22 +12,25 @@ mysql:
   environment:
     MYSQL_ROOT_PASSWORD: rootpass
     MYSQL_USER: dbuser
-    MYSQL_PASSWORD: userpass
-    MYSQL_DATABASE: myimage_db
+    MYSQL_PASSWORD: ecommerceapp
+    MYSQL_DATABASE: ecommerceapp
   volumes:
    - ./database/db-dump:/docker-entrypoint-initdb.d
 ```
-
+# To build backend application which will generate jar file
 ```
 docker run --rm \
-                    -v $PROJECT_LOCATION:/app \
-                    -v $M2_REPO:/root/.m2/ -w /app \
-                    maven:3.8.6-eclipse-temurin-19-alpine \
-                    mvn clean package -B \
-                    -Dmaven.test.skip=true \
-                    -Dactive.profile=$DEPLOYMENT_ENV
+  -v ./:/app \
+  -v $(cd ~/.m2 && pwd):/root/.m2/ -w /app \
+  maven:3.8.8-eclipse-temurin-17-alpine \
+  mvn clean package -B \
+  -Dmaven.test.skip=true \
+  -Dactive.profile=docker
 
-docker run -rm \
+```
+# To build frontend application which will generate dist folder
+```
+docker run --rm \
 -v ./:/app -w /app \
 assaduzzaman/ng-build:node18ngcli16 \
 npm install && ng version && ng build --aot --output-hashing=all

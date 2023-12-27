@@ -10,8 +10,8 @@ DROP TABLE IF EXISTS `country`;
 
 CREATE TABLE `country` (
   `id` smallint unsigned NOT NULL,
-  `code` varchar(2) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
+  `code` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 

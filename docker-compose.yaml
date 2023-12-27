@@ -34,9 +34,10 @@ services:
     container_name: mysqldb
     volumes:
       - ./mysql-data:/var/lib/mysql
-      - ./keycloak:/opt/keycloak/data/import
+      - ./data/db-dump:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=full-stack-ecommerce  
     ports:
       - 3306:3306
 
