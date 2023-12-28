@@ -1,4 +1,4 @@
-# To access keycloak admin
+# To access keycloak admin to import client
 ```
 http://shopecom-service/admin/master/console
 ```
