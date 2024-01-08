@@ -2,7 +2,12 @@
 ```
 docker-compose -f docker-compose.yaml up mysqldb -d
 # access the application
+```
 http://shopecom-service
+Test credit card number: https://stripe.com/docs/testing
+```
+
+
 
 # login user credentials
 user: user
