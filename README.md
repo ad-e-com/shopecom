@@ -6,7 +6,9 @@ docker-compose -f docker-compose.yaml up mysqldb -d
 http://shopecom-service
 Test credit card number: https://stripe.com/docs/testing
 
-
+docker exec --interactive --tty kafka1  \
+kafka-console-producer --bootstrap-server kafka1:19092 \
+                       --topic test-topic
 
 
 # login user credentials
@@ -16,6 +18,17 @@ password: user
 
 # copy file from docker container to host
 docker cp keycloak:/tmp/export.json export.json
+```
+# To export full realm
+```
+
+keycloak$ docker exec -it keycloak  ./opt/keycloak/bin/kc.sh export --realm dev --file /tmp/dev.json
+#  ----or-----
+keycloak$ docker exec keycloak  ./opt/keycloak/bin/kc.sh export --realm dev --file /tmp/dev.json
+
+docker cp keycloak:/tmp/dev.json .
+
+
 ```
 
 # To access keycloak admin to import client
