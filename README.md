@@ -26,6 +26,9 @@ keycloak$ docker exec -it keycloak  ./opt/keycloak/bin/kc.sh export --realm dev 
 #  ----or-----
 keycloak$ docker exec keycloak  ./opt/keycloak/bin/kc.sh export --realm dev --file /tmp/dev.json
 
+# for windows --tty needs to add
+docker exec -it keycloak --tty ./opt/keycloak/bin/kc.sh export --realm dev --file /tmp/dev.json
+
 docker cp keycloak:/tmp/dev.json .
 
 
