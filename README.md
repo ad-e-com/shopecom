@@ -6,11 +6,6 @@ docker-compose -f docker-compose.yaml up mysqldb -d
 http://shopecom-service
 Test credit card number: https://stripe.com/docs/testing
 
-docker exec --interactive --tty kafka1  \
-kafka-console-producer --bootstrap-server kafka1:19092 \
-                       --topic test-topic
-
-
 # login user credentials
 user: user
 password: user
