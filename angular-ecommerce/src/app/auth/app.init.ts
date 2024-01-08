@@ -4,7 +4,7 @@ export function initializeKeycloak(keycloak: KeycloakService) : () => Promise<Bo
     return () =>
       keycloak.init({
         config: {
-          realm: 'master',
+          realm: 'dev',
           url: 'http://shopecom-service',
           clientId: 'shopecom-client'
         },

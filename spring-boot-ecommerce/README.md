@@ -1,10 +1,28 @@
 ```angular2html
 
+cd spring-boot-ecommerce/
+
+
+# with out installing jdk and mavne
+docker run --rm \
+  -v ./:/app \
+  -v $(cd ~/.m2 && pwd):/root/.m2/ -w /app \
+  maven:3.8.8-eclipse-temurin-17-alpine \
+  mvn clean package -B \
+  -Dmaven.test.skip=true \
+  -Dactive.profile=docker
+
+#------ or installing jdk and maven-----------------
 mvn clean package -B \
 -Dmaven.test.skip=true \
 -Dactive.profile=docker
 
-docker build -t shopecom:backend .
+# To build backend image
+docker build -t assaduzzaman/shopecom-api .
+# or with docker file name
+docker build -t assaduzzaman/shopecom-api -f Dockerfile .
+
+
 docker run --detach --name=mysql_5_7 --restart=always --volume=/Volumes/vm/dockerdata/mysql-data:/var/lib/mysql -p 3306:3306  --env="MYSQL_ROOT_PASSWORD=123456" mysql:5.7
 
 

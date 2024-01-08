@@ -19,15 +19,15 @@ services:
   keycloak:
     image: quay.io/keycloak/keycloak:21.1.1
     container_name: keycloak
-    # command: start-dev --import 
-    command: start-dev
+    command: start-dev --import-realm
+    # command: start-dev
     volumes:
       - ./keycloak:/opt/keycloak/data/import
     environment:
       - KEYCLOAK_ADMIN=admin
       - KEYCLOAK_ADMIN_PASSWORD=admin
-    expose:
-      - 8080
+    ports:
+      - 8080:8080
 
   mysqldb:
     image: mysql:5.7
