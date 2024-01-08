@@ -17,7 +17,7 @@ services:
     expose:
       - 8000  
   keycloak:
-    image: quay.io/keycloak/keycloak:21.1.1
+    image: quay.io/keycloak/keycloak:23.0.3
     container_name: keycloak
     command: start-dev --import-realm
     # command: start-dev
