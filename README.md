@@ -1,3 +1,8 @@
+#   //pipe(map(response => response._embedded.countries),shareReplay())
+<p>
+In modern web development, Angular has emerged as a powerful and popular framework for building dynamic and responsive applications. One of the common challenges faced by Angular developers is managing duplicate HTTP requests triggered by multiple subscribers. These duplicate requests can result in inefficient network usage and unnecessary server load. Fortunately, the RxJS library, which is an integral part of Angular, provides a solution to this problem through the shareReplay operator. In this article, we will explore how the shareReplay operator can help us avoid duplicate HTTP requests in Angular applications
+</p>
+
 # To run single service from docker-compose file
 ```
 docker-compose -f docker-compose.yaml up mysqldb -d
